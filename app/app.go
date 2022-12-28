@@ -15,6 +15,8 @@ type App struct {
 
 func (a *App) Initialize() {
 	a.Router = mux.NewRouter()
+
+	a.Api = api.CreateApi("mongodb://localhost:27017")
 	a.AddHandler()
 
 }

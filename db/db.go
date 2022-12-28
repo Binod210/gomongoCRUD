@@ -8,7 +8,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func db(connString string) (*mongo.Client, error) {
+func StartDb(connString string) (*mongo.Client, error) {
 	clientOptions := options.Client().ApplyURI(connString)
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
