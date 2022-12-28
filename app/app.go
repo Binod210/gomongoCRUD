@@ -24,7 +24,7 @@ func (a *App) Initialize() {
 func (a *App) AddHandler() {
 	a.Router.HandleFunc("/user", a.Api.CreateUser).Methods("POST")
 	a.Router.HandleFunc("/user", a.Api.GetAllUsers).Methods("GET")
-	a.Router.HandleFunc("/user", a.Api.UpdateUser).Methods("PUT")
+	a.Router.HandleFunc("/user/{id}", a.Api.UpdateUser).Methods("PUT")
 	a.Router.HandleFunc("/user/{id}", a.Api.DeleteUser).Methods("DELETE")
 }
 
